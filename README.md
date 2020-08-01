@@ -39,3 +39,22 @@ Moving to background is accomplished by using the os.fork() mehtod to create
 a child copy which redirects stderr and stdout, then the parent process will
 exit.
 
+## pdf_booklet.py
+PDF booklet generates booklet pages that can be folded and bound together to form a booklet.
+Page layout is managed such that page 1 is printed next to the last page and so on so when
+they are folded, they are in the correct order.
+
+There are different sizes of booklets (--size parameter) and the pages will be scaled accoringly.
+Depending on the width-to-height proportions, sometimes there is blank space to retain the proper
+aspect.  Changing the source paper size can yield better results with more use of the paper. For
+instance when printing either large or small size booklets on letter, using tabloid as a source
+and making everything 4 times larger will fill out the booklet pages.
+
+The "amount" parameters (--hoffset, --width, --height) are delta adjustments and must be made
+using a unit suffix of: in, cm, or mm.
+
+## pdf_crop.py
+PDF crop is self-explanatory. Each margin can be cropped.
+
+## pdf_info.py
+Prints information about a PDF file.
